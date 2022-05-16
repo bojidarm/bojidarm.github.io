@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>VR AR XR Тест 4</title>
+		<meta charset="utf-8">
+		
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
+		<script src="three.min.js"></script>
+		<script src="vax.js"></script>
+	</head>
+	
+	<body>
+		<script>
+			vaxInit();
+			
+			camera.fov = 90;
+			
+			onWindowResize();
+	
+			scene.background = new THREE.CubeTextureLoader().load( [
+				'fireplace/posx.png', 'fireplace/negx.png',
+				'fireplace/posy.png', 'fireplace/negy.png',
+				'fireplace/posz.png', 'fireplace/negz.png' ] );
+				
+			var geometry = new THREE.DodecahedronGeometry( 80 );
+
+			var n = 10;
+			
+			var objects = [];
+			
+			for( var i=0; i<n; i++)
+			{
+				var material = new THREE.MeshPhysicalMaterial( {roughness: 0,
+																transmission: 1,
+																thickness: 50, 
+																reflectivity:0.6}),
+					mesh = new THREE.Mesh( geometry, material );
+					
+				
+				
+				mesh.position.set( THREE.Math.randFloat(-480, 480), THREE.Math.randFloat(-240,480),THREE.Math.randFloat(-480, 480) );
+				
+				objects.push( mesh );
+				
+				scene.add( mesh );
+			}
+			
+			window.addEventListener( "deviceorientation", deviceOrientation, true);
+			
+			function deviceOrientation( event )
+			{
+				
+				
+				camera.rotation.set(event.gamma/60, event.beta/60, 0, 'YXZ');
+			
+			}
+			
+			function animate(t)
+			{	
+			
+				
+				for( var i=0; i<n; i++ )
+					{objects[i].rotation.set(t/2, t/3, t/4);}
+				
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>
+
+
