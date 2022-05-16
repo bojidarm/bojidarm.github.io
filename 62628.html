@@ -49,10 +49,12 @@
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
+			var slopeX = 0, slopeY = 0;
 			
 			function deviceOrientation( event )
 			{
-				camera.rotation.set(event.beta/60, event.gamma/60, 0, 'YXZ');
+				slopeX = event.beta;
+				slopeY = event.gamma;
 			
 			}
 			
@@ -62,7 +64,7 @@
 				
 				for( var i=0; i<n; i++ )
 					{objects[i].rotation.set(t/2, t/3, t/4);}
-				
+				camera.lookAt(camera.position.x+slopeX,camera.positionY+slopeY, camera.position.z);
 				
 			}
 			
