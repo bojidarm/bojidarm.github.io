@@ -64,8 +64,8 @@
 				
 				for( var i=0; i<n; i++ )
 					{objects[i].rotation.set(t/2, t/3, t/4);}
-				//camera.rotation.x += (slopeY/100 - camera.position.x) * 0.05; 
-                camera.rotation.y = (slopeY/100 * dT);
+				camera.rotation.x += (slopeX/100 * dT); 
+                camera.rotation.y += (slopeY/100 * dT);
 			}
 			
 			
