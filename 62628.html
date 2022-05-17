@@ -49,26 +49,23 @@
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
-			var slopeX = 0, slopeY = 0;
+			var Alpha = 0, Beta = 0 , Gamma = 0;
 			
 			function deviceOrientation( event )
 			{
-				slopeX = Math.round(event.beta);
-				slopeY = Math.round(event.gamma);
+				Alpha = THREE.Math.degToRad( event.alpha ).toFixed(1);
+				Beta = THREE.Math.degToRad( event.beta ).toFixed(1);
+				Gamma = THREE.Math.degToRad( event.gamma ).toFixed(1);
+				camera.rotation.set(Beta, Alpha, -Gamma, 'YXZ');
+				
 				
 			
 			}
 			
 			function animate(t)
 			{	
-			
-				
 				for( var i=0; i<n; i++ )
 					{objects[i].rotation.set(t/2, t/3, t/4);}
-				camera.rotation.x = slopeX/100; 
-				camera.rotation.y = -slopeY/100;
-				camera.rotation.order = 'YXZ';
-				
 			}
 			
 			
