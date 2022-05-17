@@ -27,25 +27,14 @@
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
 			var Alpha, Beta, Gamma;
-			
-			var Cam = new THREE.Group();
-			
-			var point = new THREE.Vector3(0,-100,0);
-			
-			camera.lookAt(point);
-			
-			Cam.add(camera, point);
-			
-			Cam.position.set(0,-50,0);
-			
-			
+					
 			
 			function deviceOrientation( event )
 			{
 				Alpha = THREE.Math.degToRad( event.alpha );
 				Beta = THREE.Math.degToRad( event.beta );
 				Gamma = THREE.Math.degToRad( event.gamma );
-				Cam.rotation.set(Alpha, Gamma, 0, 'YXZ');
+				camera.rotation.set(Alpha, Gamma, 0, 'YXZ');
 			
 			}
 			
