@@ -49,14 +49,14 @@
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
-			var Alpha = 0, Beta = 0 , Gamma = 0;
+			var Beta = 0, Gamma = 0;
 			
 			function deviceOrientation( event )
 			{
-				Alpha = THREE.Math.degToRad( event.alpha ).toFixed(1);
-				Beta = THREE.Math.degToRad( event.beta ).toFixed(1);
-				Gamma = THREE.Math.degToRad( event.gamma ).toFixed(1);
-				camera.rotation.set(Beta, Alpha, -Gamma, 'YXZ');
+				
+				Beta = THREE.Math.degToRad( event.beta );
+				Gamma = THREE.Math.degToRad( event.gamma );
+				camera.rotation.set(Beta, -Gamma, 0, 'YXZ');
 				
 				
 			
