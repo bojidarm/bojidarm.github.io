@@ -23,29 +23,6 @@
 				'fireplace/posx.png', 'fireplace/negx.png',
 				'fireplace/posy.png', 'fireplace/negy.png',
 				'fireplace/posz.png', 'fireplace/negz.png' ] );
-				
-			var geometry = new THREE.DodecahedronGeometry( 80 );
-
-			var n = 10;
-			
-			var objects = [];
-			
-			for( var i=0; i<n; i++)
-			{
-				var material = new THREE.MeshPhysicalMaterial( {roughness: 0,
-																transmission: 1,
-																thickness: 50, 
-																reflectivity:0.6}),
-					mesh = new THREE.Mesh( geometry, material );
-					
-				
-				
-				mesh.position.set( THREE.Math.randFloat(-480, 480), THREE.Math.randFloat(-240,480),THREE.Math.randFloat(-480, 480) );
-				
-				objects.push( mesh );
-				
-				scene.add( mesh );
-			}
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
@@ -57,17 +34,11 @@
 				Alpha = THREE.Math.degToRad( event.alpha );
 				Beta = THREE.Math.degToRad( event.beta );
 				Gamma = THREE.Math.degToRad( event.gamma );
-				camera.rotation.set(0, Alpha, 0, 'YXZ');
+				camera.rotation.set(Alpha, Gamma, 0, 'YXZ');
 				
 				
 				
 			
-			}
-			
-			function animate(t)
-			{	
-				for( var i=0; i<n; i++ )
-					{objects[i].rotation.set(t/2, t/3, t/4);}
 			}
 			
 			
