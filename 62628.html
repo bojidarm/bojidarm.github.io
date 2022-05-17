@@ -17,7 +17,7 @@
 			
 			camera.fov = 90;
 			
-			camera.rotation.y = -Math.PI/2;
+			camera.rotation.y = Math.PI/2;
 			
 			onWindowResize();
 	
@@ -51,7 +51,7 @@
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
-			var Alpha=0, Beta = 0, Gamma = 0;
+			var Alpha, Beta, Gamma;
 			
 			function deviceOrientation( event )
 			{
