@@ -17,8 +17,6 @@
 			
 			camera.fov = 90;
 			
-			camera.rotation.y = Math.PI/2;
-			
 			onWindowResize();
 	
 			scene.background = new THREE.CubeTextureLoader().load( [
@@ -55,7 +53,7 @@
 			
 			function deviceOrientation( event )
 			{
-				Alpha = THREE.Math.degToRad( event.alpha )
+				Alpha = THREE.Math.degToRad( event.alpha );
 				Beta = THREE.Math.degToRad( event.beta );
 				Gamma = THREE.Math.degToRad( event.gamma );
 				camera.rotation.set(-Gamma, Beta, 0, 'YXZ');
