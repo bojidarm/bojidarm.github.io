@@ -53,8 +53,8 @@
 			
 			function deviceOrientation( event )
 			{
-				slopeX = Math.round(event.beta)/60;
-				slopeY = Math.round(event.gamma)/60;
+				slopeX = Math.round(event.beta)/90;
+				slopeY = Math.round(event.gamma)/90;
 			
 			}
 			
@@ -64,7 +64,7 @@
 				
 				for( var i=0; i<n; i++ )
 					{objects[i].rotation.set(t/2, t/3, t/4);}
-				camera.rotation.set(slopeX, slopeY, 0, 'YXZ');
+				camera.rotation.set(slopeY, slopeX, 0);
 				
 			}
 			
