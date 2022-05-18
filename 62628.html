@@ -78,10 +78,6 @@
 					{Gamma=90;}
 				if(Gamma<-90)
 					{Gamma=-90;}
-				if(Beta>180)
-					{Beta=180;}
-				if(Beta<-180);
-					{Beta=-180;}
 				
 				camera.rotation.x = -Gamma * Math.PI/180;
 				camera.rotation.y = Beta * Math.PI/180;
