@@ -64,7 +64,7 @@
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 5, 5, 5 );
 				mesh.position.set(THREE.Math.randFloat(-472,472), -472, THREE.Math.randFloat(-472,472));		
-				posy.push( mesh );
+				negy.push( mesh );
 				scene.add( mesh );
 			}
 			
@@ -75,7 +75,29 @@
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 5, 5, 5 );
 				mesh.position.set(THREE.Math.randFloat(-472,472), THREE.Math.randFloat(-472,472) , 472);		
-				posy.push( mesh );
+				posz.push( mesh );
+				scene.add( mesh );
+			}
+			
+			var posx = [];
+			for( var i=0; i<n; i++)
+			{	
+				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
+				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
+				mesh.scale.set( 5, 5, 5 );
+				mesh.position.set(472, THREE.Math.randFloat(-472,472) , THREE.Math.randFloat(-472,472));		
+				posx.push( mesh );
+				scene.add( mesh );
+			}
+			
+			var negx = [];
+			for( var i=0; i<n; i++)
+			{	
+				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
+				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
+				mesh.scale.set( 5, 5, 5 );
+				mesh.position.set(-472, THREE.Math.randFloat(-472,472) , THREE.Math.randFloat(-472,472));		
+				negx.push( mesh );
 				scene.add( mesh );
 			}
 				
