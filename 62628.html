@@ -42,7 +42,6 @@
 				mesh = new THREE.Mesh( coneGeometry, coneMaterial );
 				mesh.scale.set( 10, 10, 10 );
 				mesh.position.set(THREE.Math.randFloat(-512,512), THREE.Math.randFloat(-512,512), -512 );
-				mesh.rotation.x = Math.PI/2;
 				negz.push( mesh );
 				scene.add( mesh );
 			}
@@ -54,7 +53,6 @@
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 10, 10, 10 );
 				mesh.position.set(THREE.Math.randFloat(-512,512), 512, THREE.Math.randFloat(-512,512));
-				mesh.rotation.x = -Math.PI;
 				posy.push( mesh );
 				scene.add( mesh );
 			}
