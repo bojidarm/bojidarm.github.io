@@ -18,7 +18,6 @@
 			
 			camera.position.set( 0, 0, 0 );
 			camera.lookAt( new THREE.Vector3(0,-100,0) );
-			
 			camera.fov = 30;
 			
 			onWindowResize();
@@ -33,8 +32,9 @@
 			var coneGeometry = new THREE.ConeGeometry( 3, 20, 32 );
 			var coneMaterial;
 			var mesh;
-
+			
 			var n = 200;
+			
 			var negz = [];
 			for( var i=0; i<n; i++)
 			{
@@ -51,7 +51,7 @@
 				scene.add( mesh );
 			}
 			
-			scene.rotation.x = -Math.PI/2;
+			scene.rotation.x = Math.PI/2;
 			
 			/*var posy = [];
 			for( var i=0; i<n; i++)
