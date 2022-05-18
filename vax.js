@@ -140,7 +140,7 @@ function vaxInitParallax( eyeSep = 1 )
 	camera = new THREE.PerspectiveCamera( 60, 1, 1, 10000 );
 	camera.focус = 10;
 				
-	camera.position.set( 100, 0, 0);
+	camera.position.set( 0, 0, 100);
 	camera.lookAt( new THREE.Vector3(0,0,0) );
 	
 	light = new THREE.PointLight();
