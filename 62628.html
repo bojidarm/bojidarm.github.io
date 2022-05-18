@@ -34,11 +34,11 @@
 				Alpha = event.alpha;
 				Beta = event.beta;
 				Gamma = event.gamma;
-				camera.rotation.order = 'ZYX';
+				camera.rotation.order = 'YXZ';
 
                 camera.rotation.x = Beta * Math.PI / 180;
-                camera.rotation.y = Gamma * Math.PI / 180;
-				
+                camera.rotation.y = Alpha * Math.PI / 180;
+				camera.rotation.z = -Gamma * Math.PI / 180;
              
 			}
 			
