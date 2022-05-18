@@ -41,18 +41,18 @@
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
 				mesh = new THREE.Mesh( coneGeometry, coneMaterial );
 				mesh.scale.set( 5, 5, 5 );
-				mesh.position.set(THREE.Math.randFloat(-504,504), THREE.Math.randFloat(-472,472), -504 );
+				mesh.position.set(THREE.Math.randFloat(-472,472), THREE.Math.randFloat(-472,472), -472 );
 				negz.push( mesh );
 				scene.add( mesh );
 			}
 			
-			/*var posy = [];
+			var posy = [];
 			for( var i=0; i<n; i++)
 			{	
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 5, 5, 5 );
-				mesh.position.set(THREE.Math.randFloat(-497,497), 497, THREE.Math.randFloat(-472,472));
+				mesh.position.set(THREE.Math.randFloat(-472,472), 472, THREE.Math.randFloat(-472,472));
 				posy.push( mesh );
 				scene.add( mesh );
 			}
@@ -63,7 +63,7 @@
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 5, 5, 5 );
-				mesh.position.set(THREE.Math.randFloat(-497,497), -412, THREE.Math.randFloat(-497,497));		
+				mesh.position.set(THREE.Math.randFloat(-472,472), -472, THREE.Math.randFloat(-472,472));		
 				posy.push( mesh );
 				scene.add( mesh );
 			}
@@ -74,10 +74,10 @@
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 5, 5, 5 );
-				mesh.position.set(THREE.Math.randFloat(-497,497), THREE.Math.randFloat(-472,472) , 497);		
+				mesh.position.set(THREE.Math.randFloat(-472,472), THREE.Math.randFloat(-472,472) , 472);		
 				posy.push( mesh );
 				scene.add( mesh );
-			}*/
+			}
 				
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
