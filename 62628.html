@@ -39,34 +39,48 @@
 			for( var i=0; i<n; i++)
 			{
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
-			
 				mesh = new THREE.Mesh( coneGeometry, coneMaterial );
-					
 				mesh.scale.set( 10, 10, 10 );
 				mesh.position.set(THREE.Math.randFloat(-512,512), THREE.Math.randFloat(-512,512), -512 );
-				
 				mesh.rotation.x = Math.PI/2;
-				
 				negz.push( mesh );
 				scene.add( mesh );
 			}
 			
-			/*var posy = [];
+			var posy = [];
 			for( var i=0; i<n; i++)
 			{	
 				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
 				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
 				mesh.scale.set( 10, 10, 10 );
 				mesh.position.set(THREE.Math.randFloat(-512,512), 512, THREE.Math.randFloat(-512,512));
-				
 				mesh.rotation.x = -Math.PI;
-				
 				posy.push( mesh );
 				scene.add( mesh );
 			}
-			*/
 			
+			var negy = [];
+			for( var i=0; i<n; i++)
+			{	
+				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
+				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
+				mesh.scale.set( 10, 10, 10 );
+				mesh.position.set(THREE.Math.randFloat(-512,512), -512, THREE.Math.randFloat(-512,512));		
+				posy.push( mesh );
+				scene.add( mesh );
+			}
 			
+			var posz = [];
+			for( var i=0; i<n; i++)
+			{	
+				coneMaterial = new THREE.MeshLambertMaterial( {color: THREE.Math.randInt(0, 0xFFFFFF)} );
+				mesh = new THREE.Mesh(coneGeometry, coneMaterial);
+				mesh.scale.set( 10, 10, 10 );
+				mesh.position.set(THREE.Math.randFloat(-512,512), THREE.Math.randFloat(-512,512) , 512);		
+				posy.push( mesh );
+				scene.add( mesh );
+			}
+				
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
 			var Alpha, Beta, Gamma;
@@ -76,9 +90,6 @@
 				Alpha = event.alpha;
 				Beta = event.beta;
 				Gamma = event.gamma;
-				
-				Gamma += 90;
-				
 				camera.rotation.x = -Gamma * Math.PI/180;
 				camera.rotation.y = Beta * Math.PI/180;
 				
