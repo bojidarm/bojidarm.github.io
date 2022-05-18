@@ -34,7 +34,7 @@
 				Alpha = THREE.Math.degToRad( event.alpha );
 				Beta = THREE.Math.degToRad( event.beta );
 				Gamma = THREE.Math.degToRad( event.gamma );
-				camera.rotation.order = 'ZXY';
+				camera.rotation.order = 'XZY';
 
                 camera.rotation.x = Beta * Math.PI / 180;
                 camera.rotation.y = Gamma * Math.PI / 180;
