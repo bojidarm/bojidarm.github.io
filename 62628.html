@@ -19,10 +19,12 @@
 			
 			onWindowResize();
 	
-			scene.background = new THREE.CubeTextureLoader().load( [
-				'fireplace/posx.png', 'fireplace/negx.png',
-				'fireplace/posy.png', 'fireplace/negy.png',
-				'fireplace/posz.png', 'fireplace/negz.png' ] );
+			var geometry = new THREE.BoxGeometry(1024,1024,1024);
+			var material = new THREE.MeshLambertMaterial({color:blue, side:THREE.DoubleSide});
+			
+			var blueBox = new THREE.Mesh(geometry, material);
+			
+			scene.add(blueBox);
 			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
