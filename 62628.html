@@ -31,15 +31,14 @@
 			
 			function deviceOrientation( event )
 			{
-				Alpha = THREE.Math.degToRad( event.alpha );
-				Beta = THREE.Math.degToRad( event.beta );
-				Gamma = THREE.Math.degToRad( event.gamma );
-				camera.rotation.order = 'XZY';
+				Alpha = event.alpha;
+				Beta = event.beta;
+				Gamma = event.gamma;
+				camera.rotation.order = 'ZXY';
 
                 camera.rotation.x = Beta * Math.PI / 180;
                 camera.rotation.y = Gamma * Math.PI / 180;
-                camera.rotation.z = Alpha * Math.PI / 180;
-			
+             
 			}
 			
 			
