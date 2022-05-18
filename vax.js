@@ -76,45 +76,7 @@ function vaxInit( rendererOptions = {antialias:true} )
 }
 
 
-function vaxInitAnaglyph( )
-{
-	renderer = new THREE.WebGLRenderer( {antialias: true} );
-	document.body.appendChild( renderer.domElement );
-	document.body.style.margin = 0;
-	document.body.style.overflow = 'hidden';
-	
-	if( typeof Stats != 'undefined'	)
-	{
-		stats = new Stats();
-		document.body.appendChild( stats.dom );
-	}
 
-	if( typeof Physijs !== 'undefined' )
-		scene = new Physijs.Scene();
-	else
-		scene = new THREE.Scene();
-
-	scene.background = new THREE.Color('white');
-
-	camera = new THREE.PerspectiveCamera( 60, 1, 1, 10000 );
-	camera.focus = 10;
-				
-	camera.position.set( 0, 0, 100 );
-	camera.lookAt( new THREE.Vector3(0,0,0) );
-	
-	light = new THREE.PointLight();
-	light.position.set( 0, 150, 300 );
-	scene.add( light );
-
-	effect = new THREE.AnaglyphEffect( renderer );
-	effect.setSize( window.innerWidth, window.innerHeight );
-				
-				
-	window.addEventListener( 'resize', onWindowResizeAnaglyph, false );
-	onWindowResizeAnaglyph();
-	
-	renderer.setAnimationLoop( frameAnaglyph );
-}
 
 
 function vaxInitParallax( eyeSep = 1 )
@@ -138,7 +100,7 @@ function vaxInitParallax( eyeSep = 1 )
 	scene.background = new THREE.Color('white');
 
 	camera = new THREE.PerspectiveCamera( 60, 1, 1, 10000 );
-	camera.focус = 10;
+	camera.focuс = 10;
 				
 	camera.position.set( 0, 0, 100);
 	camera.lookAt( new THREE.Vector3(0,0,0) );
