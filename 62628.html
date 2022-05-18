@@ -65,9 +65,13 @@
 				scene.add( mesh );
 			}
 			
+			
+			
 			window.addEventListener( "deviceorientation", deviceOrientation, true);
 			
 			var Alpha, Beta, Gamma;
+			
+			camera.rotation.x = -Math.PI/2;
 			
 			function deviceOrientation( event )
 			{
