@@ -42,7 +42,9 @@
 				
 				mesh.position.set(THREE.Math.randFloat(-512,512), THREE.Math.randFloat(-512,512), -512 );
 				
-				objects.push( mesh );
+				mesh.rotation.x = -Math.PI/2;
+				
+				negz.push( mesh );
 				scene.add( mesh );
 			}
 			
