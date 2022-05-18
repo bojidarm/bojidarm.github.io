@@ -67,17 +67,12 @@
 			
 			var Alpha, Beta, Gamma;
 			
-			
+			camera.rotation.x = -Math.PI/2;
 			function deviceOrientation( event )
 			{
 				Alpha = event.alpha;
 				Beta = event.beta;
 				Gamma = event.gamma;
-				
-				if(Gamma>89)
-					{Gamma=-89;}
-				if(Gamma<-90)
-					{Gamma=90;}
 				
 				camera.rotation.x = -Gamma * Math.PI/180;
 				camera.rotation.y = Beta * Math.PI/180;
